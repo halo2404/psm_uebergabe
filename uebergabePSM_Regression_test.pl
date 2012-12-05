@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 
 # --------------------------------------------------- #
-# mit diesem Programm werden die benötigten Dateien   #
-# generiert die für den PSM-Regressionstest gebraucht #
+# mit diesem Programm werden die benoetigten Dateien   #
+# generiert die fuer den PSM-Regressionstest gebraucht #
 # werden.                                             #
 # Autor:   Koehler, Jens OSEV                         #
 # Version: 1.0.1                                      #
@@ -122,7 +122,7 @@ $formats{GENERIC}=2;
 print "\n". __FILE__ ." wird ausgeführt!\n" ;
 print $baseDir."\n";
 
-# --- Überprüfung des Eingabeformates --- #
+# --- Ueberpruefung des Eingabeformates --- #
 sub check_options()
 {
 # Funktionalitaet :
@@ -130,7 +130,8 @@ sub check_options()
 # Ueberpruefung der Eingaben
 &logging("Started") ;
 
-# --- mögliche Abfragemodi --- #
+# Abfangen der moeglichen Fehler:
+# --- moegliche Abfragemodi --- #
 my $result  ;
 $result=GetOptions(  "input=s"  => \$input ,
 		     		 "modus=s"  => \$modus ,
@@ -266,7 +267,7 @@ sub createPutFile()
 }
 
 
-# --- die CDR Ordner werden in den ausgewählten Paketordner kopiert --- #
+# --- die CDR Ordner werden in den ausgewaehlten Paketordner kopiert --- #
 # --- 3. Abfrage beginnt hier --- #
 sub getCdrs()
 {
@@ -342,7 +343,7 @@ sub getCdrs()
 }
 
 
-# --- generate.ksh-Skript der Ordner AMA, GENERIC, CISCOIP, etc. erzeugen und ausführen--- #
+# --- generate.ksh-Skript der Ordner AMA, GENERIC, CISCOIP, etc. erzeugen und ausfuehren--- #
 # --- 5. Abfrage beginnt hier --- #
 sub createGenerate()
 {
@@ -389,7 +390,7 @@ do {
 };	
 
 
-# --- hier wir das erzeugte generate.ksh Skript ausgeführt --- #
+# --- hier wir das erzeugte generate.ksh Skript ausgefuehrt --- #
 # --- 6. Abfrage beginnt hier --- #
 sub Generate()
 {
@@ -404,7 +405,7 @@ sub Generate()
 }
 
 
-# --- generate.ksh-Skript erzeugen für den Ordner AMA --- #
+# --- generate.ksh-Skript erzeugen fuer den Ordner AMA --- #
 sub AMA()
 {
   print "Subroutine AMA\n";
@@ -431,7 +432,7 @@ sub AMA()
 }
 
 
-# --- generate.ksh-Skript erzeugen für den Ordner AMAIN --- #
+# --- generate.ksh-Skript erzeugen fuer den Ordner AMAIN --- #
 sub AMAIN()
 {
   print "Subroutine AMAIN\n";
@@ -459,7 +460,7 @@ sub AMAIN()
 }
 
 
-# --- generate.ksh-Skript erzeugen für den Ordner AIN2AMA13 --- #
+# --- generate.ksh-Skript erzeugen fuer den Ordner AIN2AMA13 --- #
 sub IN2AMA13()
 {
   print "Subroutine IN2AMA13\n";
@@ -485,7 +486,7 @@ sub IN2AMA13()
 }
 
 
-# --- generate.ksh-Skript erzeugen für den Ordner GENERIC --- #
+# --- generate.ksh-Skript erzeugen fuer den Ordner GENERIC --- #
 sub GENERIC()
 {
   print "Subroutine GENERIC\n";
@@ -512,7 +513,7 @@ sub GENERIC()
 }
 
 
-# --- generate.ksh-Skript erzeugen für den Ordner CISCOIP --- #
+# --- generate.ksh-Skript erzeugen fuer den Ordner CISCOIP --- #
 sub CISCOIP()
 {
   print "Subroutine CISCOIP\n";
@@ -539,7 +540,7 @@ sub CISCOIP()
 }
 
 
-# --- generate.ksh-Skript erzeugen für den Ordner FKTO --- #
+# --- generate.ksh-Skript erzeugen fuer den Ordner FKTO --- #
 sub FKTO()
 {
   print "Subroutine FKTO\n";
@@ -565,7 +566,7 @@ sub FKTO()
 }
 
 
-# --- generate.ksh-Skript erzeugen für den Ordner FSMS --- #
+# --- generate.ksh-Skript erzeugen fuer den Ordner FSMS --- #
 sub FSMS()
 {
   print "Subroutine FSMS\n";
@@ -591,7 +592,7 @@ sub FSMS()
 }
 
 
-# --- generate.ksh-Skript erzeugen und ausführen --- #
+# --- generate.ksh-Skript erzeugen und ausfuehren --- #
 sub createGenerate1()
 {
   chdir("/ccb/ccb20b/sharereg/$env_UC/szenarios_batch/pack$paket/AMA.src");
@@ -630,7 +631,7 @@ sub doTar()
 }
 
 
-# --- Überprüfung ob bestimmte CDR Verzeichnisse existieren --- #
+# --- Ueberpruefung ob bestimmte CDR Verzeichnisse existieren --- #
 sub existierenVerzeichnisse()
 {
   if (-d "AMA") {
@@ -658,7 +659,7 @@ sub existierenVerzeichnisse()
 }
 
 
-# --- Übergabe der generierten Dateien --- #
+# --- Uebergabe der generierten Dateien --- #
 # --- 8. Abfrage beginnt hier --- #
 sub doPut()
 {
@@ -960,7 +961,7 @@ sub getDate()
 }
 
 
-# --- die Namen der AMA Dateien für Übergabe Skript werden aufgelistet --- #
+# --- die Namen der AMA Dateien fuer Uebergabe Skript werden aufgelistet --- #
 sub getCdrFiles()
 {
   $Utils::DbUser=$target_db_user;
@@ -1056,7 +1057,7 @@ sub envSelection()
 
 
 
-# --- Überprüfung des Eingabe- und Ausgabeformat der AMA CDRs --- #
+# --- Ueberpruefung des Eingabe- und Ausgabeformat der AMA CDRs --- #
 sub inputCdrAMA()
 {
 
@@ -1158,7 +1159,7 @@ sub Error()
   close(FILE) or die "Konnte Datei fehler.txt nicht schliessen: $!";
 }
 
-# --- Eingabe wird überprüft und die Funktionen ausgefürt --- #
+# --- Eingabe wird ueberprueft und die Funktionen ausgefuert --- #
 &check_options();
 foreach  my $function_todo (@{$functions_modus{$modus}})
 {
@@ -1166,13 +1167,13 @@ foreach  my $function_todo (@{$functions_modus{$modus}})
 }
 
 # ------------------------------ Ablauf des Programms ------------------------------------ #
-# 1) --- Übergabeordner öffnen                                                         --- #
-# 2) --- Im Übergabeordner die Datei "Kunden_PSM_$paket.$env_UC anlegen                --- #
-# 3) --- Aus den Auftragsverzeichnissen alle CDR-Ordner in den Übergabeordner kopieren --- #
+# 1) --- Uebergabeordner oeffnen                                                         --- #
+# 2) --- Im Uebergabeordner die Datei "Kunden_PSM_$paket.$env_UC anlegen                --- #
+# 3) --- Aus den Auftragsverzeichnissen alle CDR-Ordner in den Uebergabeordner kopieren --- #
 # 4) --- In den CDRs die Jahreszahl um 28 Jahre in die Zukunft setzen                  --- #
-# 5) --- Das Skript "generate.ksh" erzeugen und ausführen                              --- #
+# 5) --- Das Skript "generate.ksh" erzeugen und ausfuehren                              --- #
 # 6) --- Alle CDR-Ordner in die Datei "CDRS_PSM_$paket_$env_UC.tar" packen             --- #
 # 7) --- Die beiden generierten Dateien in den Ordner                                      #
-#    --- "/ccb/ccb20/pkgbata4/pkgbate2/regression_test/Uebergabe_PSM/" übergeben       --- #
-# 8) --- alle neu generierten Ordner löschen                                           --- #
+#    --- "/ccb/ccb20/pkgbata4/pkgbate2/regression_test/Uebergabe_PSM/" uebergeben       --- #
+# 8) --- alle neu generierten Ordner loeschen                                           --- #
 # ---------------------------------------------------------------------------------------- #
